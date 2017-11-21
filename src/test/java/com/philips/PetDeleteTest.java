@@ -62,8 +62,7 @@ public class PetDeleteTest {
 		petService.addPet(new Pet("Jenny", "2010-10-10", Species.CAT));
 		petService.deletePet("Jimmy");
 		List<Pet> pets = petService.getAllPets();
-		assertThat(pets.get(0)).extracting("name").contains("Jack");
-		assertThat(pets.get(1)).extracting("name").contains("Jenny");
+		assertThat(pets.size()).isEqualByComparingTo(2);
 		     
         
     }
