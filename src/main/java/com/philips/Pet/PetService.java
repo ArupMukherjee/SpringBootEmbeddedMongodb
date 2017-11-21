@@ -31,21 +31,24 @@ public class PetService {
 		return petRepository.findOne(name);
 	}
 	
-	public void addPet(Pet topic) {
+	public void addPet(Pet pet) {
 		
-		petRepository.save(topic);
+		petRepository.save(pet);
 	}
 	
 	
 	public void addVisit(String name, Visit visit) {
 		Pet pet = getPet(name);
-		pet.setVisit(visit);
-		petRepository.save(pet);
+		if(pet != null) {
+			pet.setVisit(visit);
+			petRepository.save(pet);
+		}
+		
 		
 	}
 	
-	public void updatePet(String name, Pet topic) {
-		petRepository.save(topic);
+	public void updatePet(String name, Pet pet) {
+		petRepository.save(pet);
 	}
 	
 	public void deletePet(String name) {
