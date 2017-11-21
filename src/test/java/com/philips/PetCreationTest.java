@@ -24,6 +24,7 @@ public class PetCreationTest {
 	@Before
 	public void contextLoads() {
 		petService.deleteAll();
+		
 		petService.addPet(new Pet("Jack", "2010-10-10", Species.DOG));
 		petService.addPet(new Pet("Jenny", "2010-10-10", Species.CAT));
 		
